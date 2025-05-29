@@ -1,0 +1,935 @@
+* {
+    font-family: 'Pretendard';
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border: 0;
+    vertical-align: baseline;
+}
+
+html {
+    scroll-behavior: smooth;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background-color: #1A1A1A;
+}
+
+::selection {
+    background-color: rgba(219, 0, 0, 0.4);
+}
+
+hr {
+    background-color: #fff;
+    width: 100%; height: 1px;
+    opacity: .2;
+}
+
+
+/* line_box 시작 ----------------------------------------- */
+.line {
+    position: absolute;
+    opacity: 0;
+}
+
+.line_1 {
+    background-color: #DB0000;
+    width: 100%; height: 2px;
+    top: 295px; left: 0;
+    transform: translateX(-100%);
+    animation: drawLine1 2s forwards;
+}
+.line_2 {
+    background-color: #DB0000;
+    width: 2px; height: 1265px;
+    top: 0; left: 203px;
+    transform: translateY(-100%);
+    animation: drawLine2 2s forwards;
+}
+
+@keyframes drawLine1 {
+    0% {
+        transform: translateX(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes drawLine2 {
+    0% {
+        transform: translateY(-100%);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* 태블릿 (1020px) */
+@media screen and (max-width: 1020px) {
+    .line_1 {
+        top: 241px;
+    }
+
+    .line_2 {
+        left: 101px;
+        height: 100vh;
+    }
+}
+
+/* 모바일 (768px) */
+@media screen and (max-width: 768px) {
+    .line_1 {
+        top: 195px;
+        height: 1px;
+    }
+
+    .line_2 {
+        left: 38px;
+        height: 10%;
+        width: 1px;
+    }
+}
+/* line_box 끝끝 ----------------------------------------- */
+
+
+/* .main 시작 ----------------------------------------- */
+.main {
+    width: 100%;
+}
+
+.main_title {
+    color: #DB0000;
+    width: 100%;
+    margin-top: 140px;
+    margin-bottom: 521px;
+}
+
+.main_title_1 {
+    padding-left: 200px;
+    font-size: clamp(45px, calc(9.57vw - 12.34px), 120px);
+    font-weight: 900;
+    color: #1A1A1A;
+    text-shadow: 
+        -2px -2px 0 #DB0000,  
+         2px -2px 0 #DB0000,
+        -2px  2px 0 #DB0000,
+         2px  2px 0 #DB0000;
+}
+
+.main_title_2 {
+    padding-left: 193px;
+    font-size: clamp(45px, calc(17.06vw - 30.28px), 200px);
+    font-weight: 900;
+}
+
+/* 태블릿 (1020px) */
+@media screen and (max-width: 1020px) {
+    .main_title {
+        margin-bottom: 447px;
+    }
+
+    .main_title_1 {
+        padding-left: 100px;
+        text-shadow: 
+        -1px -1px 0 #DB0000,  
+         1px -1px 0 #DB0000,
+        -1px  1px 0 #DB0000,
+         1px  1px 0 #DB0000;
+    }
+
+    .main_title_2 {
+        padding-left: 95px;
+    }
+}
+
+/* 모바일 (768px) */
+@media screen and (max-width: 768px) {
+    .main_title {
+        margin-bottom: 345px;
+    }
+    
+    .main_title_1 {
+        padding-left: 40px;
+    }
+
+    .main_title_2 {
+        padding-left: 35px;
+    }
+}
+/* .main 끝 ----------------------------------------- */
+
+
+/* .about 시작 ----------------------------------------- */
+/* .about {
+    width: 100%;
+    margin-bottom: 260px;
+    padding-top: 50px;
+}
+
+.about_title {
+    color: #DB0000;
+    font-size: 150px;
+    font-weight: 900;
+    margin-bottom: 100px;
+    margin-left: 200px;
+}
+
+.about_contents {
+    display: flex;
+    width: 1443px;
+    margin: 0 auto;
+}
+
+.about_img {
+    width: 457px; height: 481px;
+    position: relative;
+    margin-left: 50px;
+    margin-right: 400px;
+}
+
+.about_img > img {
+    width: 100%;
+}
+
+.about_img > svg {
+    position: absolute;
+    bottom: -70px; right: -240px;
+}
+
+.about_img > svg path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2s forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.about_text {
+    margin-right: 60px;
+    margin-top: 25px;
+    color: #fff;
+}
+
+.about_text_title {
+    display: flex;
+    margin-bottom: 65px;
+}
+
+.about_text_title span:nth-child(1) {
+    font-size: 45px;
+}
+.about_text_title span:nth-child(2) {
+    font-size: 20px;
+    font-weight: 200;
+    margin-left: 21px;
+    margin-top: 25px;
+}
+
+.about_text_body {
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 36px;
+    margin-bottom: 65px;
+}
+
+.about_program {
+    display: flex;
+    align-items: center;
+}
+
+.about_program img {
+    padding-right: 30px;
+}
+
+.about_program span {
+    font-size: 30px;
+    font-weight: 300;
+} */
+/* .about 끝 ----------------------------------------- */
+
+
+/* .project 시작 ----------------------------------------- */
+.projects {
+    width: 100%;
+    padding-top: 80px;
+}
+
+.project_title {
+    color: #DB0000;
+    font-size: clamp(45px, calc(10.71vw - 22.3px), 150px);
+    font-weight: 900;
+    margin-left: 196px;
+    margin-bottom: 160px;
+}
+
+.project {
+    max-width: 1920px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+    position: relative;
+}
+
+.project_contents {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.project_img {
+    width: 945px; height: 956px;
+}
+
+.project_img img {
+    width: 100%;
+}
+
+.project_text {
+    color: #fff;
+}
+
+.project_text_box_right {
+    margin-right: 311px;
+    margin-top: 313px;
+}
+
+.project_text_box_left {
+    margin-left: 119px;
+    margin-top: 313px;
+}
+
+.p_num {
+    font-size: clamp(20px, calc(3.12vw + 0.06px), 30px);
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.p_num > span::after {
+    content: "";
+    width: 31px; height: 2px;
+    background-color: #DB0000;
+    position: absolute;
+    top: 40px; left: 0;
+}
+
+.p_title {
+    font-size: clamp(34px, calc(5.21vw - 3.24px), 80px);
+    font-weight: bold;
+    margin-bottom: 28px;
+}
+
+.p_tag {
+    font-size: clamp(15px, calc(2.26vw + 2.61px), 25px);
+    color: #DB0000;
+    margin-bottom: 60px;
+}
+
+.p_body {
+    font-size: clamp(15px, calc(3.35vw - 4.7px), 25px);
+    font-weight: 200;
+    line-height: 40px;
+}
+
+.p_button {
+    position: relative;
+}
+
+.p_button_right {
+    margin-top: 111px;
+    margin-left: 578px;
+}
+
+.p_button_left {
+    margin-top: 111px;
+    margin-left: 703px;
+}
+
+.p_button button {
+    font-size: 30px;
+    font-weight: 300;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    cursor: pointer;
+}
+
+.p_button svg {
+    position: absolute;
+    bottom: -10px; right: 71px;
+}
+
+.p_button_left svg {
+    bottom: -10px; left: 0;
+}
+
+.p_button svg path {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation-play-state: paused;
+    animation: reverseView 1s forwards;
+}
+
+.p_button a:hover svg path {
+    animation: view 3s forwards;
+    animation-play-state: running; 
+}
+
+@keyframes view {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes reverseView {
+    /* from {
+        stroke-dashoffset: 0;
+    } */
+    to {
+        stroke-dashoffset: 1000;
+    }
+}
+
+/* 태블릿 (1020px) */
+@media screen and (max-width: 1020px) {
+    .project_title {
+        margin-left: 0;
+        margin-bottom: 86px;
+        text-align: center;
+    }
+
+    .project_contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project_img {
+        width: 80%;
+        height: auto;
+    }
+
+    .project_text_box_right,
+    .project_text_box_left {
+        margin: 60px 40px 0 40px;
+        text-align: center;
+    }
+
+    .p_title {
+        margin-bottom: 16px;
+    }
+
+    .p_tag {
+        margin-bottom: 49px;
+    }
+
+    .p_body {
+        line-height: 35px;
+    }
+
+    .p_num {
+        margin-bottom: 40px;
+    }
+
+    .p_num > span::after {
+        top: 35px; left: 47%;
+        width: 25px;
+    }
+
+    .p_button_right,
+    .p_button_left {
+        margin-top: 80px;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .p_button button {
+        font-size: 24px;
+        position: relative;
+    }
+    
+    .p_button button::after {
+        content: "";
+        width: 55px; height: 2px;
+        background-color: #DB0000;
+        position: absolute;
+        top: 31px; left: 0;
+    }
+
+    .p_button svg {
+        display: none;
+    }
+
+    .project_2 .project_img,
+    .project_4 .project_img {
+        order: -1;
+    }
+}
+
+/* 모바일 (768px) */
+@media screen and (max-width: 768px) {
+    .project {
+        margin-bottom: 150px;
+    }
+
+    .project_title {
+        margin-bottom: 58px;
+        text-align: center;
+    }
+
+    .project_contents {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project_img {
+        width: 80%;
+        height: auto;
+    }
+
+    .project_text_box_right,
+    .project_text_box_left {
+        margin: 40px 20px 0 20px;
+        text-align: center;
+    }
+
+    .p_body {
+        line-height: 1.6;
+        font-weight:200;
+    }
+
+    .p_num {
+        margin-bottom: 30px;
+    }
+
+    .p_num > span::after {
+        top: 30px;
+        width: 20px;
+    }
+
+    .p_button_right,
+    .p_button_left {
+        margin: 40px auto 0 auto;
+    }
+
+    .p_button button {
+        font-size: 20px;
+        position: relative;
+    }
+    
+    .p_button button::after {
+        content: "";
+        width: 47px; height: 2px;
+        background-color: #DB0000;
+        position: absolute;
+        top: 26px; left: 0;
+    }
+}
+/* .project 끝 ----------------------------------------- */
+
+
+/* .clone_coding 시작 ----------------------------------------- */
+.clone_coding {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 20px;
+    margin-bottom: 160px;
+}
+
+.clone_title {
+    color: #DB0000;
+    font-size: clamp(45px, calc(10.71vw - 22.3px), 150px);
+    font-weight: 900;
+    margin-bottom: 160px;
+    margin-top: 160px;
+    text-align: center;
+}
+
+.clone_contents {
+    max-width: 1492px;
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 160px;
+}
+
+.clone {
+    border-bottom: 1px solid #fff;
+}
+
+.clone a {
+    display: flex;
+    width: 100%; height: 190px;
+    position: relative;
+}
+
+.clone_num {
+    color: #DB0000;
+    font-size: clamp(52px, calc(9.55vw - 14.14px), 120px);
+    font-weight: 600;
+    padding-right: 150px;
+    padding-top: 24px;
+    padding-left: 35px;
+    font-feature-settings: "tnum";
+}
+
+.clone_body {
+    width: 68%;
+    padding-top: 24px;
+}
+
+.clone_name {
+    color: #fff;
+    font-size: clamp(24px, calc(8.02vw - 22.06px), 85px);
+}
+
+.clone_text {
+    color: #fff;
+    font-size: clamp(14px, calc(2.15vw + 0.52px), 25px);
+    font-weight: 200;
+    padding-left: 5px;
+}
+
+.c_button {
+    position: relative;
+    padding-top: 70px;
+}
+
+.c_button button {
+    font-size: clamp(13px, calc(2.46vw + 0.14px), 30px);
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0);
+    color: #fff;
+    cursor: pointer;
+}
+
+.c_button svg {
+    position: absolute;
+    bottom: 70px; left: 0;
+}
+
+.clone > a::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: #fff;
+    transition: width 0.7s ease;
+    z-index: -1;
+}
+
+.clone > a:hover::after {
+    width: 100%;
+}
+
+.clone .clone_name,
+.clone .clone_text,
+.clone button {
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    mix-blend-mode: difference;
+}
+
+/* 태블릿 (1020px) */
+@media screen and (max-width: 1020px) {
+    .clone_title {
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+
+    .clone_contents {
+        width: 100%;
+        margin-bottom: 100px;
+    }
+
+    .clone {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .clone a {
+        align-items: center;
+        height: auto;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    .clone_num {
+        padding: 0;
+        padding-right: 28px;
+    }
+
+    .clone_body {
+        padding: 0;
+        margin-right: auto;
+    }
+
+    .clone_text {
+        padding-left: 2px;
+    }
+
+    .c_button {
+        padding-top: 0px;
+        text-align: left;
+    }
+
+    .c_button svg {
+        position: static;
+        width: 120px;
+        height: 30px;
+        margin-top: 10px;
+    }
+
+    .c_button button {
+        padding-right: 20px;
+    }
+}
+
+/* 모바일 (768px) */
+@media screen and (max-width: 768px) {
+    .clone_title {
+        margin-top: 80px;
+        margin-bottom: 80px;
+    }
+
+    .clone a {
+        gap: 32px;
+    }
+
+    .clone_num {
+        padding-right: 8px;
+    }
+
+    .clone_text {
+        display: none;
+    }
+
+    .c_button svg {
+        width: 53px; height: 20px;
+        margin-top: 1px;
+    }
+
+    .c_button button {
+        font-weight: 200;
+    }
+}
+/* .clone_coding 끝 ----------------------------------------- */
+
+
+/* .contact 시작 ----------------------------------------- */
+.contact {
+    position: relative;
+}
+
+.contact_title {
+    color: #DB0000;
+    font-size: clamp(45px, calc(10.71vw - 22.3px), 150px);
+    font-weight: 900;
+    margin-top: 160px;
+    margin-left: 200px;
+    margin-bottom: 38px;
+}
+
+.c_line {
+    position: absolute;
+    width: 2px; height: 100%;
+    background-color: #DB0000;
+    top: -160px; left: 206px;
+}
+
+.contact_about {
+    margin-left: 380px;
+    margin-top: 25px;
+    color: #fff;
+}
+
+.contact_about .about_title {
+    display: flex;
+    margin-bottom: 37px;
+}
+
+.contact_about .about_title span:nth-child(1) {
+    font-size: clamp(29px, calc(5.52vw - 8.38px), 45px);
+}
+
+.contact_about .about_title span:nth-child(2) {
+    font-size: clamp(15px, calc(2.17vw + 1.34px), 20px);
+    font-weight: 200;
+    margin-left: 21px;
+    margin-top: clamp(15px, calc(2.18vw + 1.58px), 26px)
+}
+
+.contact_about .about_body {
+    font-size: clamp(16px, calc(2.63vw - 1.16px), 25px);
+    font-weight: 100;
+    line-height: 40px;
+    margin-bottom: 105px;
+}
+
+.contact_body {
+    margin-left: 380px;
+    color: #fff;
+    font-size: clamp(17px, calc(3.91vw - 4.95px), 20px);
+    font-weight: 100;
+}
+
+.contact_con {
+    display: flex;
+    align-items: center;
+}
+
+.contact_con img {
+    width: 27px; height: 20px;
+}
+
+.contact_con div {
+    margin-left: 23px;
+}
+
+.contact_email {
+    margin-bottom: 18px;
+}
+
+.contact_phone {
+    margin-left: 3px;
+}
+
+.contact_phone img {
+    width: 24px; height: 22px;
+}
+
+.marquee {
+    margin-top: 210px;
+    background-color: #DB0000;
+    width: 100%;
+    height: clamp(110px, 19.6vw, 255px);
+    position: relative;
+    overflow: hidden;
+}
+
+.marquee_content {
+    display: flex;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee_content span {
+    font-size: clamp(84px, calc(13.42vw - 3.63px), 200px);
+    font-weight: 600;
+    line-height: clamp(112px, 20.88vw, 256px);
+    white-space: nowrap;
+    padding-right: 50px;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.contact_copy {
+    margin-top: 60px;
+    margin-bottom: 60px;
+    color: #5b5b5b;
+    font-size: clamp(12px, calc(1.69vw - 0.99px), 17px);
+    font-weight: 200;
+    text-align: center;
+}
+
+/* 태블릿 (1020px) */
+@media screen and (max-width: 1020px) {
+    .contact_title {
+        margin-left: 0;
+        text-align: center;
+        margin-top: 120px;
+        margin-bottom: 30px;
+    }
+
+    .c_line {
+        display: none;
+    }
+
+    .contact_about {
+        width: 78%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact_about .about_body {
+        text-align: center;
+        line-height: 32px;
+    }
+
+    .contact_body {
+        margin-left: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact_con {
+        margin-bottom: 16px;
+    }
+
+    .contact_con div {
+        margin-left: 18px;
+    }
+
+    .marquee {
+        margin-top: 125px;
+    }
+}
+
+/* 모바일 (768px) */
+@media screen and (max-width: 768px) {
+    .contact_title {
+        margin-top: 100px;
+        margin-bottom: 40px;
+    }
+
+    .contact_about .about_body {
+        line-height: 27px;
+    }
+
+    .contact_con {
+        margin-bottom: 15px;
+    }
+
+    .contact_con img {
+        width: 23px;
+        height: 16px;
+    }
+
+    .contact_phone img {
+        width: 19px;
+    }
+
+    .contact_con div {
+        margin-left: 15px;
+    }
+
+    .marquee {
+        margin-top: 96px;
+    }
+}
+/* .contact 끝 ----------------------------------------- */
